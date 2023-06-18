@@ -1,1 +1,1 @@
-# FoodWebTS
+# Pokemon App TypeScript

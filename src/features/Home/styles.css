@@ -1,0 +1,15 @@
+.backgroundHome{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 13px;
+    padding: 10px;
+}
+
+.inputSearch{
+    width: 30vw;
+    height: 2vw;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left: 35%;
+}
+
