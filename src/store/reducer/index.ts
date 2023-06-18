@@ -1,6 +1,6 @@
-import { combineReducers } from "redux"
-import * as recipes from "./recipes"
+import { combineReducers } from "redux";
+import recipesReducer from "./listPokemons";
 
-const rootReducer = combineReducers(recipes)
+const rootReducer = combineReducers({ recipesReducer });
 
-export {rootReducer}
+export { rootReducer };
