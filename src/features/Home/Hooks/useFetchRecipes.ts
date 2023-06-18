@@ -1,29 +1,35 @@
 import { useEffect, useState } from "react";
-import adapterFetchPokemon from "../adapters";
-
+import { fetchListPokemons } from "../../../store/action";
+import { useDispatch, useSelector } from "react-redux";
+interface IPokeMones {
+  name: string;
+}
+interface IStateReduxValues {
+  listPokemons: IPokeMones[];
+  status: string;
+}
+interface IStateRedux {
+  recipesReducer: IStateReduxValues;
+}
 const useFetchRecipes = () => {
-  const url = "https://pokeapi.co/api/v2/pokemon";
-  const [listPokemones, setListPokemones] = useState([]);
-  const [listPokemonesToSearch, setListPokemonesToSearch] = useState([]);
+  const dispatch = useDispatch();
+  const { listPokemons, status } = useSelector(
+    (state: IStateRedux) => state.recipesReducer
+  );
+  const [listPokemones, setListPokemones] = useState<Object>([]);
+  const [loading, setLoading] = useState(true);
   const [inputSearch, setInputSearch] = useState("");
-  const fetchApi = async () => {
-    try {
-      const response = await fetch(url, {
-        headers: { "Content-Type": "application/json" },
-        method: "GET",
-      });
-      const responseData = await response.json();
-      const responseAdapter = await adapterFetchPokemon(responseData.results);
-      setListPokemones(responseAdapter);
-      setListPokemonesToSearch(responseAdapter);
-    } catch (error) {
-      console.log("*****INGRESO AL ERROR*****", error);
-    }
-  };
+  useEffect(() => {
+    dispatch(fetchListPokemons());
+  }, []);
 
   useEffect(() => {
-    fetchApi();
-  }, []);
+    if (status === "SUCCESS") {
+      setLoading(false);
+      setListPokemones(listPokemons);
+      return;
+    }
+  }, [status]);
 
   // Logica input
 
@@ -31,20 +37,17 @@ const useFetchRecipes = () => {
     setInputSearch(value);
   };
   useEffect(() => {
-    console.log("inputSearch ---->", inputSearch);
     if (inputSearch) {
-      console.log("Ingreso  ---->", inputSearch);
-      const newListPoke = listPokemonesToSearch.filter((item) =>
+      const newListPoke = listPokemons.filter((item: IPokeMones) =>
         item.name.includes(inputSearch)
       );
       setListPokemones(newListPoke);
       return;
     }
-    console.log("Salio ---->", inputSearch);
-    setListPokemones(listPokemonesToSearch);
+    setListPokemones(listPokemons);
   }, [inputSearch]);
 
-  return { listPokemones, onChangeInput };
+  return { listPokemones, onChangeInput, loading };
 };
 
 export default useFetchRecipes;
