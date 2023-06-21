@@ -1,4 +1,4 @@
-import { useFetchRecipes, useHomeRecipes } from "./Hooks";
+import { useFetchRecipes, useHomeRecipes } from "../Hooks";
 import "./styles.css";
 // interface I
 interface ISpritesPokem {
@@ -27,19 +27,9 @@ const Home = () => {
           {loading ? (
             <h1>LOADING</h1>
           ) : (
-            listPokemones.map((item: IListPokemones, index) => {
+            listPokemones.map((item: IListPokemones, index: number) => {
               return (
-                <div
-                  key={index}
-                  style={{
-                    background: "green",
-                    borderRadius: 10,
-                    margin: 5,
-                    width: 250,
-                    height: 250,
-                    justifyContent: "center",
-                  }}
-                >
+                <div key={index} className="card">
                   <h1 key={index}>{item?.name}</h1>
                   <img src={item.sprites.front_default} alt="" />
                   <button onClick={() => onPressGoDeteils(item?.id)}>
