@@ -17,3 +17,12 @@
     display: flex;
     justify-content: center;
 }
+
+.card{
+    background-color: green;
+    border-radius: 10px;
+    margin: 5px;
+    width: 250px;
+    height: 250px;
+    justify-content: "center";
+}
