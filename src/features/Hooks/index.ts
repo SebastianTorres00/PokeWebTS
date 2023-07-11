@@ -1,5 +1,5 @@
 import useFetchRecipes from "./useFetchRecipes";
 import useHomeRecipes from "./useHomeRecipes";
-import useDeteils from "./useDeteils";
+import useDetails from "./useDeteils";
 
-export { useFetchRecipes, useHomeRecipes, useDeteils };
+export { useFetchRecipes, useHomeRecipes, useDetails };

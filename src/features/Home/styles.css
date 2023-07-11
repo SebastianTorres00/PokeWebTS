@@ -4,25 +4,69 @@
     border-radius: 13px;
     padding: 10px;
     min-height: 80vh;
+    justify-content: center;
+    /* display: grid;
+    grid-template-columns: repeat(4, 15vw); */
 }
 
 .inputSearch{
     width: 30vw;
     height: 2vw;
+    /* margin-bottom: 15px; */
     border-radius: 10px;
     border-width: 0px;
+}
+
+.inputSearch:focus{
+    border:none;
+    border: 2px #84cc6e solid;
+    outline: none;
+    margin: 0;
 }
 
 .formHome{
     display: flex;
     justify-content: center;
+    height: 2vw;
 }
 
 .card{
-    background-color: green;
-    border-radius: 10px;
-    margin: 5px;
-    width: 250px;
-    height: 250px;
-    justify-content: "center";
+    background-color: #84cc6e;
+    margin: 50px;
+    border-radius: 1px;
+    width: 13.5vw;
+    height: 18vw;
+    display: flex;
+    /* justify-content: center; */
+    display: inline-block;
+    transition: 1s;
 }
+.card-second{
+    background-color: #8bd874;
+    border-radius: 3px;
+    width: 17vw;
+    height: 21.5vw;
+    margin-left: -45px;
+    margin-top: -45px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.loadingPokeBall {
+    width: 200px;
+    height: 200px;
+    margin-top: 80px;
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

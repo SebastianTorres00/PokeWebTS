@@ -1,17 +1,13 @@
 import { useLocation } from "react-router-dom";
-
+import imgNavBar from "../../assets/International_Pokémon_logo.svg.png";
 const NavBar = () => {
   const { pathname } = useLocation();
   console.log("Location pathname", pathname.includes("detalles"));
-  const isDeteils = pathname.includes("detalles");
+  const isDetails = pathname.includes("detalles");
   return (
-    !isDeteils && (
+    !isDetails && (
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <h1>Nav Bar 1</h1>
-        <br />
-        <h1>Nav Bar 2</h1>
-        <br />
-        <h1>Nav Bar 3</h1>
+        <img src={imgNavBar} alt="" style={{ width: 300, margin: 10 }} />
       </div>
     )
   );
