@@ -1,12 +1,13 @@
-import React from "react";
 import { useFetchRecipes, useHomeRecipes } from "../Hooks";
 import "./styles.css";
 import imgLoading from "../../assets/test2-fotor-bg-remover-20230704204433.png";
+import { Other } from "../Details/Details";
 // interface I
 interface ISpritesPokem {
   back_default: string;
   back_shiny: string;
   front_default: string;
+  other?: Other;
 }
 interface IListPokemones {
   name: string;
@@ -23,7 +24,7 @@ const Home = () => {
       <form className="formHome">
         <input
           className="inputSearch"
-          onChange={(value) => onChangeInput(value.target.value)}
+          onChange={(value) => onChangeInput(value.target.value.toLowerCase())}
         />
       </form>
       <div className="backgroundHome">

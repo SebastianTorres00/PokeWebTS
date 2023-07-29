@@ -1,6 +1,11 @@
 import adapterFetchPokemon from "../../../features/Home/adapters";
-import { ERROR, FETCH, IDLE, SUCCESS } from "../constants";
-const success = (data) => ({
+import { ERROR, FETCH, SUCCESS } from "../constants";
+
+interface IPokemonAdapter {
+  name: string;
+  url: string;
+}
+const success = (data: IPokemonAdapter[]) => ({
   type: SUCCESS,
   payload: data,
 });
@@ -15,12 +20,7 @@ const error = () => ({
   payload: undefined,
 });
 
-const init = () => ({
-  type: IDLE,
-  payload: undefined,
-});
-
-const fetchListPokemons = () => async (dispatch) => {
+const fetchListPokemons = () => async (dispatch: any) => {
   try {
     const url = "https://pokeapi.co/api/v2/pokemon";
     dispatch(fetchPokemons());
@@ -29,12 +29,13 @@ const fetchListPokemons = () => async (dispatch) => {
       method: "GET",
     });
     const responseData = await response.json();
-    const responseAdapter = await adapterFetchPokemon(responseData.results);
+    const responseAdapter: IPokemonAdapter[] = await adapterFetchPokemon(
+      responseData.results,
+    );
 
     dispatch(success(responseAdapter));
   } catch (e) {
     dispatch(error());
-    // console.log("Error------>", e);
   }
 };
 

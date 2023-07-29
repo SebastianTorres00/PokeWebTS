@@ -33,24 +33,25 @@ interface IAbility {
 interface Iabilities {
   ability: IAbility;
 }
-interface IPokemons {
+interface IPokemon {
   name: string;
   id: string;
   sprites: ISpritesPokem;
   height: string;
   weight: string;
-  abilities: Iabilities;
+  abilities: Iabilities[];
 }
 interface IPropsDetails {
-  pokeDetails: IPokemons;
+  pokeDetails: IPokemon | undefined;
   listOfAbilities: string;
 }
+
 const Details = () => {
   const data = useParams();
   const navigate = useNavigate();
   const props: IPropsDetails = useDetails(data.id);
   const { listOfAbilities } = props;
-  const pokeDetails = props?.pokeDetails;
+  const listPokeDetails = props?.pokeDetails;
   const goBack = () => {
     navigate("/");
   };
@@ -60,13 +61,13 @@ const Details = () => {
       <div className="cardDetails ">
         <div className="cardDetailsImage">
           <img
-            src={pokeDetails?.sprites.other?.dream_world.front_default}
-            alt={pokeDetails?.name}
+            src={listPokeDetails?.sprites.other?.dream_world.front_default}
+            alt={listPokeDetails?.name}
             className="detailsImage"
           />
         </div>
-        <h1 className="namePokemonDetails" key={pokeDetails?.id}>
-          {pokeDetails?.name.toUpperCase()}
+        <h1 className="namePokemonDetails" key={listPokeDetails?.id}>
+          {listPokeDetails?.name.toUpperCase()}
         </h1>
         <p
           style={{
@@ -86,7 +87,7 @@ const Details = () => {
             fontSize: 16,
           }}
         >
-          Peso: {pokeDetails?.weight}lb
+          Peso: {listPokeDetails?.weight}lb
         </p>
         <p
           style={{
@@ -96,7 +97,7 @@ const Details = () => {
             fontSize: 16,
           }}
         >
-          Altura: {pokeDetails?.height}"
+          Altura: {listPokeDetails?.height}"
         </p>
         <button className="goBackDetails" onClick={() => goBack()}>
           Volver Atras

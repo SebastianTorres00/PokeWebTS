@@ -3,13 +3,13 @@ interface IPokemonsFirst {
 }
 
 interface IUrlProps {
-  url: IPokemonsFirst;
+  url: string;
 }
 const adapterFetchPokemon = async (responseData: []) => {
-  const allUrls: IUrlProps[] = [];
-  responseData.map((item: IPokemonsFirst) => allUrls.push(item.url));
-
-  const fetchPokeM = async (url: IPokemonsFirst) => {
+  const allUrls: IUrlProps[] = responseData.map((item: IPokemonsFirst) => ({
+    url: item.url,
+  }));
+  const fetchPokeM = async (url: string) => {
     const infoPokemon = await fetch(url, {
       headers: { "Content-Type": "application/json" },
       method: "GET",
@@ -18,10 +18,9 @@ const adapterFetchPokemon = async (responseData: []) => {
     return responseData;
   };
 
-  const callFetchPoke = async (urlProps: IUrlProps) => {
-    const peticiones = urlProps.map(async (item: IPokemonsFirst) => {
-      const url = item;
-      const responsePoke = await fetchPokeM(url);
+  const callFetchPoke = async (urlProps: IUrlProps[]) => {
+    const peticiones = urlProps.map(async (item: IUrlProps) => {
+      const responsePoke = await fetchPokeM(item.url);
 
       return responsePoke;
     });

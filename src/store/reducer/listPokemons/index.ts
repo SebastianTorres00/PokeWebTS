@@ -33,7 +33,7 @@ const recipesReducer = (state: IinitialState, action: Iactionpayload) => {
         status: ERROR,
       };
     default:
-      return initialState.listPokemons;
+      return state;
   }
 };
 
