@@ -1,3 +1,4 @@
+import React from "react";
 import { useFetchRecipes, useHomeRecipes } from "../Hooks";
 import "./styles.css";
 import imgLoading from "../../assets/test2-fotor-bg-remover-20230704204433.png";
@@ -15,7 +16,6 @@ interface IListPokemones {
 const Home = () => {
   const { listPokemones, onChangeInput, loading } = useFetchRecipes();
   const { onPressGoDetails } = useHomeRecipes();
-  console.log("Pokemones", listPokemones);
 
   return (
     // <>
@@ -36,7 +36,7 @@ const Home = () => {
                 <div key={index} className="card-second">
                   <div>
                     <img
-                      src={item?.sprites.other?.dream_world.front_default}
+                      src={item?.sprites.other?.dream_world?.front_default}
                       alt=""
                       style={{
                         height: "8vw",
@@ -45,25 +45,18 @@ const Home = () => {
                       }}
                     />
                   </div>
-
-                  <h1
-                    key={index}
-                    style={{
-                      color: "#21292c",
-                      fontFamily: "Montserrat",
-                      fontSize: 25,
-                      textAlign: "center",
-                    }}
-                  >
+                  <h1 key={index} className="namePokeMon">
                     {item?.name[0].toUpperCase() + item?.name.substring(1)}
                   </h1>
                   <button
-                    style={{
-                      margin: "auto",
-                      display: "flex",
-                      bottom: "-25%",
-                      position: "relative",
-                    }}
+                    data-testid="isATest"
+                    // style={{
+                    //   margin: "auto",
+                    //   display: "flex",
+                    //   bottom: "-25%",
+                    //   position: "relative",
+                    // }}
+                    className="buttonSeeDetails"
                     onClick={() => onPressGoDetails(item?.id)}
                   >
                     Ver Detalles

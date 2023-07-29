@@ -1,63 +1,193 @@
-.containerDetails{
-    background-color: #8bd874;
-    border-radius: 1px;
-    width: 21.5vw;
-    height: 26.2vw;
-    display: inline-block;
-    transition: 1s;
+.containerDetails {
+  background-color: #8bd874;
+  border-radius: 1px;
+  width: 21.5vw;
+  height: 26.2vw;
+  display: inline-block;
+  transition: 1s;
 }
 .cardDetails {
-    background-color: #A2FF86;
-    border-radius: 3px;
-    padding: 13px;
-    width: 20vw;
-    height: 25vw;
-    margin-left: -10px;
-    margin-top: -10px;
-    /* transform: rotate(2deg); */
-    
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-color: #a2ff86;
+  border-radius: 3px;
+  padding: 13px;
+  width: 20vw;
+  height: 25vw;
+  margin-left: -10px;
+  margin-top: -10px;
+  /* transform: rotate(2deg); */
+
+  box-shadow:
+    rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-.containerDetails:hover{
-    transform: scale(1.1);
+.containerDetails:hover {
+  transform: scale(1.1);
 }
-.cardDetailsImage{
-    /* background-color: hwb(120 21% 8% / 0.548); */
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    justify-content: center;
-    
+.cardDetailsImage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.detailsImage{
-    /* background-color: hwb(120 8% 90% / 0.548); */
-    /* border-radius: 50%; */
-    height: 10vw;
+.detailsImage {
+  height: 10vw;
 }
 
 .namePokemonDetails {
-    font-weight: 800;
-    text-align: center;
-    font-size: 26px;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Ysabeau Office', sans-serif;
-    color: #21292c
-};
-.pokeDetails{
-    color: #21292c
+  font-weight: 800;
+  text-align: center;
+  font-size: 26px;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Ysabeau Office", sans-serif;
+  color: #21292c;
+}
+.pokeDetails {
+  color: #21292c;
 }
 
-.goBackDetails{
+.goBackDetails {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.characteristicsDetails {
+  /* font-weight: 800; */
+  /* text-align: center; */
+  font-weight: 800;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Ysabeau Office", sans-serif;
+}
+
+@media (max-width: 1350px) {
+  .containerDetails {
+    background-color: #8bd874;
+    border-radius: 1px;
+    width: 23vw;
+    height: 28vw;
+    display: inline-block;
+    transition: 1s;
+  }
+  .cardDetails {
+    background-color: #a2ff86;
+    border-radius: 3px;
+    padding: 13px;
+    width: 21vw;
+    height: 26vw;
+    margin-left: -10px;
+    margin-top: -10px;
+    box-shadow:
+      rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  .cardDetailsImage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .detailsImage {
+    height: 8vw;
+  }
+
+  .namePokemonDetails {
+    font-weight: 800;
+    text-align: center;
+    font-size: 23px;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Ysabeau Office", sans-serif;
+    color: #21292c;
+  }
+
+  .goBackDetails {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+  }
 }
-.characteristicsDetails {
-    /* font-weight: 800; */
-    /* text-align: center; */
-    font-weight: 800;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Ysabeau Office', sans-serif;
+
+@media (max-width: 1260px) {
+    .containerDetails {
+        background-color: #8bd874;
+        border-radius: 1px;
+        width: 24vw;
+        height: 29vw;
+        display: inline-block;
+        transition: 1s;
+      }
+      .cardDetails {
+        background-color: #a2ff86;
+        border-radius: 3px;
+        padding: 13px;
+        width: 22vw;
+        height: 27vw;
+        margin-left: -10px;
+        margin-top: -10px;
+        box-shadow:
+          rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+}
+
+@media (max-width: 1010px) {
+    .containerDetails {
+        background-color: #0d240500;
+        border-radius: 1px;
+        width: 24vw;
+        height: 29vw;
+        display: inline-block;
+        transition: 1s;
+      }
+      .cardDetails {
+        background-color: #a2ff86;
+        border-radius: 3px;
+        padding: 13px;
+        width: 26vw;
+        height: 31vw;
+        margin-left: -10px;
+        margin-top: -10px;
+        box-shadow:
+          rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+}
+
+@media (max-width: 810px) {
+    .cardDetails {
+        background-color: #a2ff86;
+        border-radius: 3px;
+        padding: 13px;
+        width: 28vw;
+        height: 38vw;
+        margin-left: -10px;
+        margin-top: -10px;
+        box-shadow:
+          rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+}
+
+@media (max-width: 428px) {
+    .cardDetails {
+        background-color: #a2ff86;
+        border-radius: 3px;
+        padding: 13px;
+        width: 30vw;
+        min-width:170px; 
+        max-width:250px;
+        height: 60vw;
+        margin-left: auto;
+        margin-top: auto;
+        position: relative;
+        box-shadow:
+          rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+
+      .goBackDetails {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+      }
 }

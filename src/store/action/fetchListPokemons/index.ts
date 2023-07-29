@@ -34,7 +34,7 @@ const fetchListPokemons = () => async (dispatch) => {
     dispatch(success(responseAdapter));
   } catch (e) {
     dispatch(error());
-    console.log("Error------>", e);
+    // console.log("Error------>", e);
   }
 };
 

@@ -1,72 +1,282 @@
-.backgroundHome{
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 13px;
-    padding: 10px;
-    min-height: 80vh;
-    justify-content: center;
-    /* display: grid;
+.backgroundHome {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 13px;
+  padding: 10px;
+  min-height: 80vh;
+  justify-content: center;
+  /* display: grid;
     grid-template-columns: repeat(4, 15vw); */
 }
-
-.inputSearch{
-    width: 30vw;
-    height: 2vw;
-    /* margin-bottom: 15px; */
-    border-radius: 10px;
-    border-width: 0px;
+.namePokeMon {
+  color: #21292c;
+  font-family: Montserrat;
+  font-size: 25px;
+  text-align: center;
+}
+.inputSearch {
+  width: 30vw;
+  height: 2vw;
+  /* margin-bottom: 15px; */
+  border-radius: 10px;
+  border-width: 0px;
+}
+.buttonSeeDetails {
+  margin: auto;
+  display: flex;
+  bottom: -25%;
+  position: relative;
+}
+.inputSearch:focus {
+  border: none;
+  border: 2px #84cc6e solid;
+  outline: none;
+  margin: 0;
 }
 
-.inputSearch:focus{
-    border:none;
-    border: 2px #84cc6e solid;
-    outline: none;
-    margin: 0;
+.formHome {
+  display: flex;
+  justify-content: center;
+  height: 2vw;
 }
 
-.formHome{
-    display: flex;
-    justify-content: center;
-    height: 2vw;
+.card {
+  background-color: #84cc6e;
+  margin: 50px;
+  border-radius: 1px;
+  width: 13.5vw;
+  height: 18vw;
+  display: flex;
+  /* justify-content: center; */
+  display: inline-block;
+  transition: 1s;
+}
+.card-second {
+  background-color: #8bd874;
+  border-radius: 3px;
+  width: 17vw;
+  height: 21.5vw;
+  margin-left: -45px;
+  margin-top: -45px;
+  box-shadow:
+    rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.card{
+.card:hover {
+  transform: scale(1.1);
+}
+
+.loadingPokeBall {
+  width: 200px;
+  height: 200px;
+  margin-top: 80px;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 1710px) {
+  .card {
     background-color: #84cc6e;
     margin: 50px;
     border-radius: 1px;
-    width: 13.5vw;
-    height: 18vw;
+    width: 13vw;
+    height: 17.5vw;
     display: flex;
-    /* justify-content: center; */
     display: inline-block;
     transition: 1s;
-}
-.card-second{
+  }
+  .card-second {
     background-color: #8bd874;
     border-radius: 3px;
     width: 17vw;
     height: 21.5vw;
     margin-left: -45px;
     margin-top: -45px;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.card:hover{
-    transform: scale(1.1);
-}
-
-.loadingPokeBall {
-    width: 200px;
-    height: 200px;
-    margin-top: 80px;
-    animation: rotation 2s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
+}
+
+@media (max-width: 1350px) {
+  .card {
+    background-color: #84cc6e;
+    margin: 50px;
+    border-radius: 1px;
+    width: 10vw;
+    height: 14vw;
+    display: flex;
+    display: inline-block;
+    transition: 1s;
+  }
+  .card-second {
+    background-color: #8bd874;
+    border-radius: 3px;
+    width: 15vw;
+    height: 19vw;
+    margin-left: -45px;
+    margin-top: -45px;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .buttonSeeDetails {
+    margin: auto;
+    display: flex;
+    bottom: -13%;
+    position: relative;
+  }
+}
+
+@media (max-width: 1260px) {
+  .card {
+    background-color: #84cc6e;
+    margin: 50px;
+    border-radius: 1px;
+    width: 9.5vw;
+    height: 13.5vw;
+    display: flex;
+    display: inline-block;
+    transition: 1s;
+  }
+  .card-second {
+    background-color: #8bd874;
+    border-radius: 3px;
+    width: 15vw;
+    height: 19vw;
+    margin-left: -45px;
+    margin-top: -45px;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .buttonSeeDetails {
+    margin: auto;
+    display: flex;
+    bottom: -13%;
+    position: relative;
+  }
+}
+@media (max-width: 1230px) {
+  .card {
+    background-color: #84cc6e00;
+    margin: 50px;
+    border-radius: 1px;
+    width: 10vw;
+    height: 14vw;
+    display: flex;
+    display: inline-block;
+    transition: 1s;
+  }
+}
+@media (max-width: 1010px) {
+  .card {
+    background-color: #84cc6e00;
+    margin: 50px;
+    border-radius: 1px;
+    width: 10vw;
+    height: 14vw;
+    display: flex;
+    display: inline-block;
+    transition: 1s;
+  }
+  .card-second {
+    background-color: #8bd874;
+    border-radius: 3px;
+    width: 17vw;
+    height: 22vw;
+    margin-left: -45px;
+    margin-top: -45px;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .buttonSeeDetails {
+    margin: auto;
+    display: flex;
+    bottom: -13%;
+    position: relative;
+  }
+}
+
+@media (max-width: 810px) {
+  .card-second {
+    background-color: #8bd874;
+    border-radius: 3px;
+    width: 23vw;
+    height: 27vw;
+    margin-left: -45px;
+    margin-top: -45px;
+    box-shadow:
+      rgba(0, 0, 0, 0.09) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .buttonSeeDetails {
+    margin: auto;
+    display: flex;
+    bottom: -13%;
+    position: relative;
+  }
+  .namePokeMon {
+    font-size: 22px;
+  }
+  .inputSearch {
+    width: 30vw;
+    height: 3vw;
+    border-radius: 10px;
+    border-width: 0px;
+  }
+}
+
+@media (max-width: 428px) {
+  .card-second {
+    /* width: 25vw;
+    height: 32vw; */
+    height: 42vw;
+    width: 25vw;
+    min-width:150px; 
+    max-width:200px
+  }
+  .inputSearch {
+    width: 38vw;
+    height: 5vw;
+    border-radius: 10px;
+    border-width: 0px;
+  }
+  .buttonSeeDetails {
+    margin: auto;
+    display: flex;
+    bottom: -13%;
+    width: 25vw;
+    min-width:140px; 
+    max-width:200px;
+    position: relative;
+  }
+}
