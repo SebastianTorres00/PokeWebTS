@@ -16,7 +16,10 @@ const initialState: IinitialState = {
 const recipesReducer = (state: IinitialState, action: Iactionpayload) => {
   switch (action.type) {
     case IDLE:
-      return IDLE;
+      return {
+        ...state,
+        status: IDLE,
+      };
     case FETCH:
       return {
         ...initialState,
@@ -33,7 +36,7 @@ const recipesReducer = (state: IinitialState, action: Iactionpayload) => {
         status: ERROR,
       };
     default:
-      return state;
+      return initialState.listPokemons;
   }
 };
 
